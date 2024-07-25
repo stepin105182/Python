@@ -17,5 +17,5 @@ def post(request):
 def contact(request):
     if request.method == 'POST':
         messages.success(request, "Message sent.")
-
+    
     return render(request,"blog/contact.html")

@@ -11,5 +11,4 @@ urlpatterns = [
     path("contact",views.contact,name="contact"),
     path("posts/<slug:slug>",views.post,name="post"),
 
-
 ]

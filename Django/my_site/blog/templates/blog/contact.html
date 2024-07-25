@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block title %} Contact {% endblock title %}
+{% block tittle %}
+Blog - Contact
+{% endblock %}
 {% block css_files %}
 <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cf/ContactFrom_v1/css/util.css">
 <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cf/ContactFrom_v1/css/main.css">
@@ -11,9 +13,9 @@
 <div class="container">
   <div class="container-contact1 w-auto ">
     <div class="mcontact1-pic js-tilt" data-tilt="">
-    <img src="https://colorlib.com/etc/cf/ContactFrom_v1/images/img-01.png" alt="IMG">
+    <img src="static/email.png" alt="IMG">
     </div>
-    <form method = "post" action= "{% url "contact" %}" class="contact1-form validate-form">
+    <form method = "post" action= "{% url 'blog:contact' %}" class="contact1-form validate-form">
       {% csrf_token %} 
     <span class="contact1-form-title">
     Get in touch
@@ -45,5 +47,31 @@
     </form>
     </div>
   </div>
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}></li>
+      <div class="alert alert-success alert-dismissible fade show js-alert" role="alert" style="margin-right: 40px;margin-top: 30px;">
+        {{message}} If any issues/queries you can contact again
+      </div>
+      {% endfor %}
+  </ul>
+  
+  {% endif %}
 
+{% endblock %}
+{% block scripts %}
+<script>
+  if (document.querySelector('.js-alert')) {
+    document.querySelectorAll('.js-alert').forEach(function($el) {
+      setTimeout(() => {
+        $el.classList.remove('show');
+        setTimeout(() => {
+          $el.remove();
+        }, 500); // Adjust the delay as needed
+      }, 2000);
+    });
+  }
+  
+  </script>
 {% endblock %}
