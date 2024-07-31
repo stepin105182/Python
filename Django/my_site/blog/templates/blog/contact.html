@@ -3,8 +3,8 @@
 Blog - Contact
 {% endblock %}
 {% block css_files %}
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cf/ContactFrom_v1/css/util.css">
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cf/ContactFrom_v1/css/main.css">
+<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
 
 
 
@@ -13,7 +13,7 @@ Blog - Contact
 <div class="container">
   <div class="container-contact1 w-auto ">
     <div class="mcontact1-pic js-tilt" data-tilt="">
-    <img src="static/email.png" alt="IMG">
+    <img src="static/images/email.png" alt="IMG">
     </div>
     <form method = "post" action= "{% url 'blog:contact' %}" class="contact1-form validate-form">
       {% csrf_token %} 
