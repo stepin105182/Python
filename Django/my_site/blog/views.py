@@ -19,3 +19,6 @@ def contact(request):
         messages.success(request, "Message sent.")
     
     return render(request,"blog/contact.html")
+
+def about(request):
+    return render(request,"blog/about.html")
