@@ -9,6 +9,8 @@
     
 <link rel="stylesheet" type="text/css" href="/static/css/util.css">
 <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+
 <link
       rel="stylesheet"
       href="/static/css/all.min.css"
@@ -16,14 +18,14 @@
 <link rel="stylesheet" type="text/css" href="/static/css/mdb.min.css">
 
 </head>
-<body class = "bg-dark text-white d-flex flex-column min-vh-100">
+<body class = "bg-mycolor text-white d-flex flex-column min-vh-100">
     <div class="container">
-        <header class="d-flex justify-content-center py-3">
+        <header class="d-flex justify-content-center py-3  {% if request.path == '/' or request.path == '/posts' %} fixed-top {% endif %} "  style="background-color : #646464">
           <ul class="nav nav-pills" style=--bs-nav-link-color: #f8f9fa;>
             <li  id="home" class="nav-item "><a href="/" class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/posts" class="nav-link {% if request.path == '/posts' %} active {% endif %}">All Blogs</a></li>
             <li class="nav-item"><a href="/contact" class="nav-link {% if request.path == '/contact' %} active {% endif %}">Contact</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link  {% if request.path == '/about' %} active {% endif %} ">About Me</a></li>
           </ul>
         </header>
       </div>
@@ -33,19 +35,14 @@
     
      
       <!-- Fottoer -->
-      <footer class="footer-area bg-dark text-white py-3 mt-auto">
+      <footer class="footer-area text-white py-4 mt-auto {% if request.path == '/' or request.path == '/posts' %} bg-mysecondory {% endif %} ">
         {% block ctags %}
       
       {% endblock %}
-        <div class="container text-center">
-          <p class="m-0" style="
- font-family: Montserrat-Regular;
-          font-size: 14px;
-          line-height: 1.7;
-          color: #666;
-          margin: 0;
+        <div class="container text-center ">
+          <p class="m-0 {% if request.path == '/' or request.path == '/posts' %} mycustomtext {%else%} mycustomtext2 {% endif %}" 
           
-      "> Blogs &copy; All rights reserved</p>
+      > Blogs &copy; All rights reserved</p>
         </div>
       </footer>
 </body>

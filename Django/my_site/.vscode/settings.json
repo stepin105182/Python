@@ -1,4 +1,9 @@
 {
     "editor.defaultColorDecorators": true,
-    "editor.colorDecoratorsActivatedOn": "clickAndHover"
+    "editor.colorDecoratorsActivatedOn": "clickAndHover",
+    "workbench.editor.languageDetection": true,
+    
+"[django-txt]": {
+    "workbench.editor.languageDetection": false 
+ }
 }

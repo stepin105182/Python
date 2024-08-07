@@ -1,0 +1,24 @@
+.bg-mycolor {
+    background-color: #646464;
+}
+
+.bg-mysecondory{
+   background-color: #fff8dced;
+}
+
+.mycustomtext{
+    font-family: Montserrat-Regular;
+          font-size: 14px;
+          line-height: 1.7;
+          color : #646464;
+         
+          margin: 0;
+}
+.mycustomtext2{
+    font-family: Montserrat-Regular;
+          font-size: 14px;
+          line-height: 1.7;
+          color : #fff8dced;
+         
+          margin: 0;
+}
