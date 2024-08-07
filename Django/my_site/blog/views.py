@@ -9,7 +9,7 @@ def start(request):
     return render(request,"blog/index.html")
 
 def allposts(request):
-    return render(request,"blog/index.html")
+    return render(request,"blog/posts.html")
 
 def post(request):
     return "ho"

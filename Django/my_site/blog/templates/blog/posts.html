@@ -1,9 +1,8 @@
-
 {% extends "base.html" %}
 {% load static %}
 {%load custom_tag %}
 {% block tittle %}
-Blog - Home
+Blog - All
 {% endblock %}
 {% block css_files %} 
 
@@ -15,37 +14,10 @@ Blog - Home
 {% comment %} main css file {% endcomment %}
 <link href={% static "assets/css/main.css" %} rel="stylesheet">
 {% endblock %}
+
 {% block content %}
 
-
-<div class="page-title "style="
-background-color: #646464;
-">
-    <div class="heading" style="
-    padding: 100px 0 100px 0;
-">
-      <div class="container">
-        <div class="row d-flex justify-content-center text-center">
-          <div class="col-lg-8">
-            <h1>Blog</h1>
-            <p class="mb-0"style="
-            color: #fff4f4;
-        ">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <nav class="breadcrumbs" style="
-    background-color: color-mix(in srgb, var(--default-color), transparent 70%);
-">
-      <div class="container mx-5">
-            
-       <p style="font-size: 16px;color: #fff4f4;"> Latest Posts</p>
-      </div>
-    </nav>
-  </div>
-  {% comment %} Blogs section {% endcomment %}
-  <section id="blog-posts" class="blog-posts section"style="
+<section id="blog-posts" class="blog-posts section"style="
   background-color: cornsilk;">
 
   <div class="container">
@@ -102,7 +74,31 @@ background-color: #646464;
 
         </article>
       </div><!-- End post list item -->
+      <div class="col-lg-4">
+        <article>
 
+          <div class="post-img">
+            <img src="/static/assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
+          </div>
+
+          <p class="post-category">Entertainment</p>
+
+          <h2 class="title">
+            <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
+          </h2>
+
+          <div class="d-flex align-items-center">
+            <img src="/static/assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+            <div class="post-meta">
+              <p class="post-author">Mika Lendon</p>
+              <p class="post-date">
+                <time datetime="2022-01-01">Feb 14, 2022</time>
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
       <div class="col-lg-4">
         <article>
 
@@ -180,7 +176,31 @@ background-color: #646464;
 
         </article>
       </div><!-- End post list item -->
+      <div class="col-lg-4">
+        <article>
 
+          <div class="post-img">
+            <img src="/static/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+          </div>
+
+          <p class="post-category">Politics</p>
+
+          <h2 class="title">
+            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+          </h2>
+
+          <div class="d-flex align-items-center">
+            <img src="/static/assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+            <div class="post-meta">
+              <p class="post-author">Maria Doe</p>
+              <p class="post-date">
+                <time datetime="2022-01-01">Jan 1, 2022</time>
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
       <div class="col-lg-4">
         <article>
 
@@ -206,46 +226,35 @@ background-color: #646464;
 
         </article>
       </div><!-- End post list item -->
+      <div class="col-lg-4">
+        <article>
 
+          <div class="post-img">
+            <img src="/static/assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
+          </div>
+
+          <p class="post-category">Sports</p>
+
+          <h2 class="title">
+            <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
+          </h2>
+
+          <div class="d-flex align-items-center">
+            <img src="/static/assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+            <div class="post-meta">
+              <p class="post-author">Lisa Neymar</p>
+              <p class="post-date">
+                <time datetime="2022-01-01">Jun 30, 2022</time>
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
     </div>
   </div>    
 </section>
-{% endblock %}
-
-{% block scripts %}
-    <script src={% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
-    <script src={% static "assets/vendor/php-email-form/validate.js" %}></script>
-    <script src={% static "assets/vendor/aos/aos.js" %}></script>
-    <script src={% static "assets/vendor/glightbox/js/glightbox.min.js" %}></script>
-    <script src={% static "assets/vendor/swiper/swiper-bundle.min.js" %}></script>
-    <script src={% static "assets/vendor/purecounter/purecounter_vanilla.js" %}></script>
-    <script src={% static "assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" %}></script>
-    <script src={% static "assets/vendor/isotope-layout/isotope.pkgd.min.js" %}></script>
-  
-    <!-- Main JS File -->
-    <script src={% static "assets/js/main.js" %}></script>
-   <script>
-      // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the header
-var header = document.getElementById("myHeader");
-
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("fixed-top");
-  } else {
-    header.classList.remove("fixed-top");
-  }
-}
-    </script>
-    
-  
-{% endblock %}
+{% endblock  %}
 {% block ctags %}
 {% smconnect %}
 {% endblock %}

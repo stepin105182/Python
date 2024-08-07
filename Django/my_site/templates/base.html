@@ -19,8 +19,10 @@
 
 </head>
 <body class = "bg-mycolor text-white d-flex flex-column min-vh-100">
-    <div class="container">
-        <header class="d-flex justify-content-center py-3  {% if request.path == '/' or request.path == '/posts' %} fixed-top {% endif %} "  style="background-color : #646464">
+    <div class="container" style="
+    margin-bottom: 30px;
+">
+        <header class="d-flex justify-content-center py-3  {% if request.path == '/' or request.path == '/posts' %} fixed-top {% endif %} "  style="background-color : #646464;">
           <ul class="nav nav-pills" style=--bs-nav-link-color: #f8f9fa;>
             <li  id="home" class="nav-item "><a href="/" class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/posts" class="nav-link {% if request.path == '/posts' %} active {% endif %}">All Blogs</a></li>
