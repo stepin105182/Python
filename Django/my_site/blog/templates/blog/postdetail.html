@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_tag %}
+
+
+{% block tittle %}
+Blog - post1
+{% endblock %}
+{% block css_files %} 
+
+<link href={% static "assets/vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet">
+<link href={% static "assets/vendor/bootstrap-icons/bootstrap-icons.css"%} rel="stylesheet">
+<link href={% static "assets/vendor/aos/aos.css"%} rel="stylesheet">
+<link href={% static "assets/vendor/glightbox/css/glightbox.min.css"%} rel="stylesheet">
+<link href={% static "assets/vendor/swiper/swiper-bundle.min.css"%} rel="stylesheet">
+{% comment %} main css file {% endcomment %}
+<link href={% static "assets/css/main.css" %} rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<div class="page-title "style="
+background-color: #646464;
+">
+    <div class="heading" style="
+    padding: 100px 0 100px 0;
+">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Blog</h1>
+            <p class="mb-0"style="
+            color: #fff4f4;
+        ">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="breadcrumbs" style="
+    background-color: color-mix(in srgb, var(--default-color), transparent 70%);
+">
+      <div class="container mx-5">
+            
+       <p style="font-size: 16px;color: #fff4f4;"> Latest Posts</p>
+      </div>
+    </nav>
+  </div>
+{% endblock %}
+
+
+{% block ctags %}
+{% smconnect %}
+{% endblock %}

@@ -11,8 +11,8 @@ def start(request):
 def allposts(request):
     return render(request,"blog/posts.html")
 
-def post(request):
-    return "ho"
+def post(request,slug):
+    return  render(request,"blog/postdetail.html")
 
 def contact(request):
     if request.method == 'POST':

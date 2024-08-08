@@ -37,7 +37,7 @@
     
      
       <!-- Fottoer -->
-      <footer class="footer-area text-white py-4 mt-auto {% if request.path == '/' or request.path == '/posts' %} bg-mysecondory {% endif %} ">
+      <footer class="footer-area text-white py-4 mt-auto {% if request.path == '/' or request.path == '/posts' or request.path|slice:"" %} bg-mysecondory {% endif %} ">
         {% block ctags %}
       
       {% endblock %}

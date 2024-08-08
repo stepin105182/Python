@@ -128,3 +128,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# dont change orders of URL_PREFIXES
+URL_PREFIXES =[ "/posts","/contact","/about"]
