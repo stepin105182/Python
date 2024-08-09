@@ -65,9 +65,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'utils.context_processors.urlpatterns'
             ],
             'libraries':{
-                'custom_tag': 'templates.tags.custom_tags',
+                'custom_tag': 'templates.tags_and_filters.custom_tags',
+                'custom_filter': 'templates.tags_and_filters.custom_filters' ,
             
             }
         },
@@ -129,5 +131,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# dont change orders of URL_PREFIXES
-URL_PREFIXES =[ "/posts","/contact","/about"]

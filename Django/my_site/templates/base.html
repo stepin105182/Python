@@ -1,3 +1,4 @@
+{% load custom_filter %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
     <div class="container" style="
     margin-bottom: 30px;
 ">
-        <header class="d-flex justify-content-center py-3  {% if request.path == '/' or request.path == '/posts' %} fixed-top {% endif %} "  style="background-color : #646464;">
+        <header class="d-flex justify-content-center py-3  {% if request.path == '/' or request.path|starts_with:postsUrl %} fixed-top {% endif %} "  style="background-color : #646464;">
           <ul class="nav nav-pills" style=--bs-nav-link-color: #f8f9fa;>
             <li  id="home" class="nav-item "><a href="/" class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/posts" class="nav-link {% if request.path == '/posts' %} active {% endif %}">All Blogs</a></li>
@@ -37,12 +38,12 @@
     
      
       <!-- Fottoer -->
-      <footer class="footer-area text-white py-4 mt-auto {% if request.path == '/' or request.path == '/posts' or request.path|slice:"" %} bg-mysecondory {% endif %} ">
+      <footer class="footer-area text-white py-4 mt-auto {% if request.path == homeUrl or request.path|starts_with:postsUrl %} bg-mysecondory {% endif %} ">
         {% block ctags %}
       
       {% endblock %}
         <div class="container text-center ">
-          <p class="m-0 {% if request.path == '/' or request.path == '/posts' %} mycustomtext {%else%} mycustomtext2 {% endif %}" 
+          <p class="m-0 {% if request.path == homeUrl or request.path|starts_with:postsUrl%} mycustomtext {%else%} mycustomtext2 {% endif %}" 
           
       > Blogs &copy; All rights reserved</p>
         </div>
