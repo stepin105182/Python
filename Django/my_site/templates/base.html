@@ -38,12 +38,12 @@
     
      
       <!-- Fottoer -->
-      <footer class="footer-area text-white py-4 mt-auto {% if request.path == homeUrl or request.path|starts_with:postsUrl %} bg-mysecondory {% endif %} ">
+      <footer class="footer-area text-white py-4 mt-auto {% if request.path == homeUrl or request.path == postsUrl %} bg-mysecondory {% endif %} ">
         {% block ctags %}
       
       {% endblock %}
         <div class="container text-center ">
-          <p class="m-0 {% if request.path == homeUrl or request.path|starts_with:postsUrl%} mycustomtext {%else%} mycustomtext2 {% endif %}" 
+          <p class="m-0 {% if request.path == homeUrl or request.path == postsUrl %} mycustomtext {%else%} mycustomtext2 {% endif %}" 
           
       > Blogs &copy; All rights reserved</p>
         </div>
